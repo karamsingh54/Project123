@@ -1,0 +1,12 @@
+---
+ - name: create web image using Dockerfile
+   hosts: all
+   tasks:
+    - name: build docker image
+      docker_image:
+        name: image:latest
+        build:
+          path: /root/Dockerfile
+          source: build
+        state: present
+
